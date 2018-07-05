@@ -36,7 +36,13 @@ export default class SetUp extends Component {
                 <Text style={{fontSize: 20, color: 'green'}}>{this.mingStu.toString()}</Text>
                 <Text style={{fontSize: 20, color: 'blue'}}>{name}</Text>
                 <Text style={{fontSize: 20, color: 'blue'}}>{age}</Text>
-                <Text style={{fontSize: 20, color: 'blue'}}>{add(3, 4)}</Text>
+                <Text style={{
+                    fontSize: 20,
+                    color: 'blue',
+                    width: 100,
+                    height: 100,
+                    backgroundColor: 'red',
+                }}>{add(3, 4)}</Text>
             </View>
         );
     }
