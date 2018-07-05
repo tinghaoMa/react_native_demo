@@ -8,6 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import Student from './Student'
+import MingStudent from './MingStudent'
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,15 +18,21 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+    constructor(props){
+        super(props);
+        this.stu = new Student("zs", '20', '男');
+        this.mingStu = new MingStudent();
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
                 <Text style={styles.instructions}>To get started, edit App.js</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
-
+                <Text style={{fontSize:20,color:'red'}}>{this.stu.toString()}</Text>
+                <Text style={{fontSize:20,color:'green'}}>{this.mingStu.toString()}</Text>
             </View>
         );
     }
