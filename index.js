@@ -1,7 +1,7 @@
 /** @format */
 
 import {AppRegistry} from 'react-native';
-import TouchableTest from './TouchableTest';
+import ImageTest from './ImageTest';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => TouchableTest);
+AppRegistry.registerComponent(appName, () => ImageTest);
