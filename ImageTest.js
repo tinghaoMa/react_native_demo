@@ -27,6 +27,8 @@ export default class ImageTest extends Component {
                     style={{width: 200, height: 200}}
                     source={{uri: 'https://github.com/tinghaoMa/code/blob/png/TCP_UDP.jpeg?raw=true'}}
                 />
+
+                <Image source={{uri: 'ic_launcher'}} style={{width: 40, height: 40}} />
             </View>
         );
     }
