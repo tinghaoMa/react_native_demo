@@ -10,6 +10,7 @@ export default class EntryComponent extends Component {
         return <View>
             <PropsComponent
                 name='小明'
+                sex='man'
             />
         </View>
     }
