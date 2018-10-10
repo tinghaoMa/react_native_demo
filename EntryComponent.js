@@ -6,6 +6,7 @@ import PropsComponent from './PropsComponent';
 import StateComponent from './StateComponent';
 import RefComponent from './RefComponent';
 import FlexBoxComponent from './FlexBoxComponent';
+import TouchableTest from './TouchableTest';
 
 export default class EntryComponent extends Component {
     constructor(props){
@@ -19,7 +20,7 @@ export default class EntryComponent extends Component {
 
     render() {
         return <View>
-            <FlexBoxComponent/>
+            <TouchableTest/>
         </View>
     }
 

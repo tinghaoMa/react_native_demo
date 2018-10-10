@@ -42,8 +42,8 @@ export default class TouchableTest extends Component {
                             )
                         }}
                     >
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
+                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                            <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'blue',color:'white'}}>
                                 我是TouchableWithoutFeedback,单击我
                             </Text>
                         </View>
@@ -58,8 +58,8 @@ export default class TouchableTest extends Component {
 
                         }}
                     >
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
+                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                            <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'green',color:'white'}}>
                                 登录
                             </Text>
                         </View>
@@ -73,14 +73,13 @@ export default class TouchableTest extends Component {
                             this.setState({text: '触摸结束,持续时间:' + (new Date().getTime() - this.state.startTime) + '毫秒'})
                         }}
                     >
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
+                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                            <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'orange',color:'white'}}>
                                 点我
                             </Text>
                         </View>
                     </TouchableWithoutFeedback>
                     <TouchableHighlight
-                        style={{marginTop: 20}}
                         activeOpacity={0.7}
                         underlayColor='green'
                         onHideUnderlay={()=> {
@@ -93,8 +92,8 @@ export default class TouchableTest extends Component {
 
                         }}
                     >
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
+                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                            <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'pink',color:'white'}}>
                                 TouchableHighlight
                             </Text>
                         </View>
@@ -108,6 +107,7 @@ export default class TouchableTest extends Component {
                             <Text style={{margin: 30}}>TouchableNativeFeedback</Text>
                         </View>
                     </TouchableNativeFeedback>
+
                     <Text style={styles.text}>{this.state.text}</Text>
                     <Text style={styles.text}>您单击了:{this.state.count}次</Text>
                     <Text style={styles.text}>您长按了:{this.state.countLong}次</Text>
@@ -119,8 +119,11 @@ export default class TouchableTest extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: 50
+        backgroundColor:'gray',
+        marginTop: 50,
+        width:400,
+        height:800,
+
     },
     button: {
         borderWidth: 1,
