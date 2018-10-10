@@ -12,8 +12,8 @@ export default class FlexBoxComponent extends Component {
                     marginTop:20,
                     height:800,
                     justifyContent:'center',
-                    alignItems:'center'}}>
-            <Text style={{width: 100,height:150,fontSize: 20, color: 'black', backgroundColor:'white'}}>
+                    alignItems:'stretch'}}>
+            <Text style={{width: 100,fontSize: 20, color: 'black', backgroundColor:'white'}}>
                 第一行 justifyContent:'center' 对齐方式
             </Text>
             <Text style={{width: 100,height:250,fontSize: 20, color: 'blue',backgroundColor:'red'}}>
