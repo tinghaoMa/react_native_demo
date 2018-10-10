@@ -7,10 +7,10 @@ import PropsComponent from './PropsComponent';
 export default class EntryComponent extends Component {
 
     render() {
+        let params={name:'小张',age:201,sex:'男'};
         return <View>
             <PropsComponent
-                name='小明'
-                sex='man'
+                {...params}
             />
         </View>
     }
