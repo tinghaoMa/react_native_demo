@@ -42,7 +42,7 @@ export default class TouchableTest extends Component {
                             )
                         }}
                     >
-                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                        <View style={styles.button}>
                             <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'blue',color:'white'}}>
                                 我是TouchableWithoutFeedback,单击我
                             </Text>
@@ -58,7 +58,7 @@ export default class TouchableTest extends Component {
 
                         }}
                     >
-                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                        <View style={styles.button}>
                             <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'green',color:'white'}}>
                                 登录
                             </Text>
@@ -73,7 +73,7 @@ export default class TouchableTest extends Component {
                             this.setState({text: '触摸结束,持续时间:' + (new Date().getTime() - this.state.startTime) + '毫秒'})
                         }}
                     >
-                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                        <View style={styles.button}>
                             <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'orange',color:'white'}}>
                                 点我
                             </Text>
@@ -92,7 +92,7 @@ export default class TouchableTest extends Component {
 
                         }}
                     >
-                        <View style={{flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'}}>
+                        <View style={styles.button}>
                             <Text style={{flex:1,alignSelf:'stretch',backgroundColor:'pink',color:'white'}}>
                                 TouchableHighlight
                             </Text>
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        borderWidth: 1,
+        flexDirection:'row',height:100,alignSelf:'stretch',backgroundColor:'red'
     },
     buttonText: {
         fontSize: 18,
