@@ -1,8 +1,7 @@
 /** @format */
 
 import {AppRegistry} from 'react-native';
-import RootView from './RootView';
-import LifecycleComponent from './LifecycleComponent';
 import {name as appName} from './app.json';
+import EntryComponent from './EntryComponent'
 
-AppRegistry.registerComponent(appName, () => LifecycleComponent);
+AppRegistry.registerComponent(appName, () => EntryComponent);
