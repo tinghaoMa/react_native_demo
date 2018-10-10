@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text,Image} from 'react-native';
 
 
 export default class StateComponent extends Component {
@@ -13,16 +13,36 @@ export default class StateComponent extends Component {
         super(props);
         this.state={
             color:'red',
-            size:80,
+            size:40,
         }
     }
 
     render() {
         return <View>
-            <Text style={{fontSize: this.state.size, color: this.state.color}}>
-                State初始化练习
+            <Text
+                style={{fontSize: 20, color: this.state.color}}
+                onPress={()=>{
+                    this.setState({
+                        size:this.state.size+20
+                    })
+                }}>
+                点击变大
             </Text>
-        </View>
+            <Text
+                style={{fontSize: 20, color: this.state.color}}
+                onPress={()=>{
+                    this.setState({
+                        size:this.state.size-20
+                    })
+                }}>
+                点击变小
+            </Text>
 
+            <Image
+                style={{width:this.state.size,height:this.state.size}}
+                source={require('./meinv.jpeg')}
+            />
+
+        </View>
     }
 }
