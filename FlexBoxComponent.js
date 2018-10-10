@@ -20,7 +20,8 @@ export default class FlexBoxComponent extends Component {
             </Text>
             <Text style={{width: 100,height:250,fontSize: 20, color: 'blue',backgroundColor:'red',alignSelf:'flex-end',
                 marginBottom:100,
-                marginLeft:50,
+                bottom:100,
+                left:100,
                 padding:20,}}>
                 第二行  alignItems 横向排列x是主轴 y是侧轴 竖向排列x是侧轴 y是主轴
             </Text>
