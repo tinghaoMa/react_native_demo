@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
-import {View, Button, Alert, TouchableOpacity, Image, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
 
 export default class PropsComponent extends Component {
+    static defaultProps={
+        age:10,
+    }
+
     constructor(props) {
         super(props);
     };
@@ -10,8 +14,12 @@ export default class PropsComponent extends Component {
     render() {
         console.log('------render------');
         return <View>
-            <Text style={{fontSize: 20, color: 'green'}}
-            >属性练习{this.props.name}</Text>
+            <Text style={{fontSize: 20, color: 'green'}}>
+                传递属性 name = {this.props.name}
+            </Text>
+            <Text style={{fontSize: 20, color: 'green'}}>
+                默认属性 age = {this.props.age}
+            </Text>
         </View>
 
     }
