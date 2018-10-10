@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {View, Text} from 'react-native';
 
 
 export default class PropsComponent extends Component {
     static defaultProps={
-        age:10,
+        age:1111,
+    }
+
+    static propTypes={
+        name:PropTypes.string,
+        age:PropTypes.number,
     }
 
     constructor(props) {
