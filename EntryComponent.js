@@ -5,6 +5,7 @@ import LifecycleComponent from './LifecycleComponent';
 import PropsComponent from './PropsComponent';
 import StateComponent from './StateComponent';
 import RefComponent from './RefComponent';
+import FlexBoxComponent from './FlexBoxComponent';
 
 export default class EntryComponent extends Component {
     constructor(props){
@@ -18,19 +19,7 @@ export default class EntryComponent extends Component {
 
     render() {
         return <View>
-            <Text
-                style={{fontSize:40, color:'red'}}
-                onPress={()=>{
-                    let size = this.refTest.getSize();
-                    this.setState({
-                        size:size
-                    })
-                }}>
-                点击获取ref大小 size={this.state.size}
-            </Text>
-            <RefComponent
-                ref={ref => this.refTest = ref}
-            />
+            <FlexBoxComponent/>
         </View>
     }
 
