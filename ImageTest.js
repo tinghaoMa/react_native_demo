@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {View, Image, Text} from 'react-native';
 
 
 export default class ImageTest extends Component {
@@ -17,9 +17,17 @@ export default class ImageTest extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{alignItems:'center'}}>
                 <Image
-                    style={{width:200, height:200,borderWidth:1}}
+                    onLoadStart={()=>{
+                        console.log('-------onLoadStart-------');
+                    }}
+
+                    onLoadEnd={()=>{
+                        console.log('-------onLoadEnd-------');
+                    }}
+
+                    style={{width:200, height:200,borderWidth:4,borderRadius:10}}
                     source={require('./meinv.jpeg')}
                 />
 
@@ -28,7 +36,7 @@ export default class ImageTest extends Component {
                     source={{uri: 'https://github.com/tinghaoMa/code/blob/png/TCP_UDP.jpeg?raw=true'}}
                 />
 
-                <Image source={{uri: 'ic_launcher'}} style={{width: 40, height: 40}} />
+                <Image source={{uri: 'ic_launcher'}} style={{width: 80, height: 80}} />
             </View>
         );
     }
