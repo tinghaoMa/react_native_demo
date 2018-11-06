@@ -10,10 +10,16 @@ import React, {Component} from 'react';
 import {View, Image, Text} from 'react-native';
 
 
-export default class ImageTest extends Component {
+export default class ImageTest extends React.Component {
     constructor(props) {
         super(props);
     }
+
+
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+
 
     render() {
         return (

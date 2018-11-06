@@ -7,9 +7,10 @@ import StateComponent from './StateComponent';
 import RefComponent from './RefComponent';
 import FlexBoxComponent from './FlexBoxComponent';
 import TouchableTest from './TouchableTest';
+import DemoTest from './DemoTest';
 import ImageTest from './ImageTest';
 
-export default class EntryComponent extends Component {
+export default class EntryComponent extends React.Component {
     constructor(props){
         super(props);
         this.refTest= React.createRef();
@@ -21,7 +22,7 @@ export default class EntryComponent extends Component {
 
     render() {
         return <View>
-            <ImageTest/>
+            <DemoTest/>
         </View>
     }
 
