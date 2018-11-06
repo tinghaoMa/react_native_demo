@@ -25,10 +25,30 @@ export default class DemoTest extends React.Component {
     }
 
     componentDidMount() {
-        this.applyFun();
-        this.callFun();
-        this.bindFun();
-        this.testFun();
+        // this.applyFun();
+        // this.callFun();
+        // this.bindFun();
+        // this.testFun();
+
+        this.takeLongTime().then(v => {
+            console.log("got", v);
+        });
+
+
+        this.test();
+    }
+
+
+    takeLongTime() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => resolve("long_time_value"), 1000);
+        });
+    }
+
+
+    async test() {
+        const v = await this.takeLongTime();
+        console.log(v);
     }
 
 
@@ -73,11 +93,12 @@ export default class DemoTest extends React.Component {
         func();
     }
 
-    testFun=()=>{
+    testFun = () => {
         function func(a, b, c) {
             console.log(a, b, c);
         }
-        var func1 = func.bind(null,'linxin');
+
+        var func1 = func.bind(null, 'linxin');
 
         func('A', 'B', 'C');            // A B C
         func1('A', 'B', 'C');           // linxin A B
