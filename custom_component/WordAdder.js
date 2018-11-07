@@ -29,7 +29,7 @@ export default class WordAdder extends React.Component {
         // 这个地方导致了bug 必须使用concat 返回一个新数组 否则ListOfWords不会刷新
         const preWords = this.state.words;
         preWords.push('hello world');
-        this.setState({words: Immutable.Map(preWords)});
+        this.setState({words:[...this.state.words] });
     }
 
     render() {
