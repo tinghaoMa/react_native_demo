@@ -9,6 +9,7 @@ import FlexBoxComponent from './FlexBoxComponent';
 import TouchableTest from './TouchableTest';
 import DemoTest from './DemoTest';
 import ParentTest from './ParentTest';
+import PureComponentTest from './PureComponentTest';
 import ImageTest from './ImageTest';
 
 var array = ['a', 'b'];
@@ -16,7 +17,6 @@ export default class EntryComponent extends React.Component {
     constructor(props) {
         super(props);
         this.refTest = React.createRef();
-        console.log('parent constructor');
     }
 
     state = {
@@ -25,18 +25,20 @@ export default class EntryComponent extends React.Component {
     }
 
     render() {
-        console.log('parent render');
-        return <View style={{flex:1}}>
+        return <View style={{flex: 1}}>
+            {/*
             <ParentTest image={this.state.images}>
-                {/*
+
                 <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
                 <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
 
 
-              */}
 
                 <Text key={1} style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
             </ParentTest>
+
+              */}
+            <PureComponentTest/>
         </View>
     }
 
@@ -49,8 +51,8 @@ export default class EntryComponent extends React.Component {
         }, 3000);
 
 
-        this.arrayTest();
-        this.symbolTest();
+        // this.arrayTest();
+        // this.symbolTest();
     }
 
     arrayTest = () => {
@@ -83,16 +85,16 @@ export default class EntryComponent extends React.Component {
 
         let entries = Object.entries(obj);
 
-        for(let [key,value] of entries){
+        for (let [key, value] of entries) {
             console.log(key, value);
         }
 
 
-        Object.getOwnPropertySymbols(obj).forEach((item)=>{
+        Object.getOwnPropertySymbols(obj).forEach((item) => {
             console.log(obj[item]);
         })
 
-        Reflect.ownKeys(obj).forEach((item)=>{
+        Reflect.ownKeys(obj).forEach((item) => {
             console.log('reflet =----', item, obj[item]);
         })
     }
