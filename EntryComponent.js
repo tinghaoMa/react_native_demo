@@ -26,7 +26,7 @@ export default class EntryComponent extends React.Component {
 
     render() {
         console.log('parent render');
-        return <View>
+        return <View style={{flex:1}}>
             <ParentTest image={this.state.images}>
                 {/*
                 <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
