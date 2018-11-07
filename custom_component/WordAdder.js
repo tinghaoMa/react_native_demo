@@ -12,14 +12,14 @@ import {
     Button
 } from 'react-native';
 import ListOfWords from './ListOfWords';
-import Immutable from 'immutable';
+import Immutable, {List} from 'immutable';
 
 export default class WordAdder extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            words: ['marklar']
+            words: List(['marklar'])
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -27,9 +27,7 @@ export default class WordAdder extends React.Component {
     handleClick() {
         console.log('button click');
         // 这个地方导致了bug 必须使用concat 返回一个新数组 否则ListOfWords不会刷新
-        const preWords = this.state.words;
-        preWords.push('hello world');
-        this.setState({words:[...this.state.words] });
+        this.setState({words: this.state.words.push('hello')});
     }
 
     render() {
