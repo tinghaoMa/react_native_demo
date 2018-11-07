@@ -12,6 +12,7 @@ import {
     Button
 } from 'react-native';
 import ListOfWords from './ListOfWords';
+import Immutable from 'immutable';
 
 export default class WordAdder extends React.Component {
 
@@ -27,7 +28,8 @@ export default class WordAdder extends React.Component {
         console.log('button click');
         // 这个地方导致了bug 必须使用concat 返回一个新数组 否则ListOfWords不会刷新
         const preWords = this.state.words;
-        this.setState({words: preWords.concat(['hello'])});
+        preWords.push('hello world');
+        this.setState({words: Immutable.Map(preWords)});
     }
 
     render() {
@@ -44,5 +46,10 @@ export default class WordAdder extends React.Component {
         );
     }
 
+    componentDidMount() {
+        this.immutableTest();
+    }
 
+    immutableTest() {
+    }
 }
