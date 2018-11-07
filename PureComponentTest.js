@@ -25,6 +25,7 @@ export default class PureComponentTest extends React.Component {
     }
 
     render() {
+
         console.log('PureComponentTest render')
         return (
             <View style={{alignItems: 'center'}}>

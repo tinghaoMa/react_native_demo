@@ -10,6 +10,7 @@ import TouchableTest from './TouchableTest';
 import DemoTest from './DemoTest';
 import ParentTest from './ParentTest';
 import PureComponentTest from './PureComponentTest';
+import WordAdder from './custom_component/WordAdder';
 import ImageTest from './ImageTest';
 
 var array = ['a', 'b'];
@@ -38,7 +39,7 @@ export default class EntryComponent extends React.Component {
             </ParentTest>
 
               */}
-            <PureComponentTest/>
+            <WordAdder/>
         </View>
     }
 
