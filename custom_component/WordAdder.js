@@ -28,7 +28,16 @@ export default class WordAdder extends React.Component {
         console.log('button click');
         // 这个地方导致了bug 必须使用concat 返回一个新数组 否则ListOfWords不会刷新
         this.setState({words: this.state.words.push('hello')});
+
+        this.test('made')((param1,a) => {
+            console.log(param1,a);
+            return param1;
+        })('hello');
+
     }
+
+    test = a=> next => action => next(action,a);
+
 
     render() {
         return (
