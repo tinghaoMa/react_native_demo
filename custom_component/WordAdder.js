@@ -14,6 +14,8 @@ import {
 import ListOfWords from './ListOfWords';
 import Immutable, {List} from 'immutable';
 
+
+var totalCount = 5;
 export default class WordAdder extends React.Component {
 
     constructor(props) {
@@ -22,6 +24,7 @@ export default class WordAdder extends React.Component {
             words: List(['marklar'])
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handle2Click = this.handle2Click.bind(this);
     }
 
     handleClick() {
@@ -29,14 +32,14 @@ export default class WordAdder extends React.Component {
         // 这个地方导致了bug 必须使用concat 返回一个新数组 否则ListOfWords不会刷新
         this.setState({words: this.state.words.push('hello')});
 
-        this.test('made')((param1,a) => {
-            console.log(param1,a);
+        this.test('made')((param1, a) => {
+            console.log(param1, a);
             return param1;
         })('hello');
 
     }
 
-    test = a=> next => action => next(action,a);
+    test = a => next => action => next(action, a);
 
 
     render() {
@@ -49,8 +52,26 @@ export default class WordAdder extends React.Component {
                     accessibilityLabel="Learn more about this purple button"
                 />
                 <ListOfWords words={this.state.words}/>
+
+                <Button
+                    onPress={this.handle2Click}
+                    title="handle2Click"
+                    color="#841584"
+                />
             </View>
         );
+    }
+
+    handle2Click = () => {
+        let test = function* getChance(count) {
+            while (count > 0) {
+                totalCount--;
+                yield totalCount;
+            }
+        }
+        let result = test(totalCount);
+        let value = result.next();
+        console.log(`vlue=${value.value}`);
     }
 
     componentDidMount() {
